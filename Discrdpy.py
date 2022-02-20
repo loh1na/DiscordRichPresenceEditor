@@ -1,5 +1,5 @@
 # coded by loh1na
-import sys, Settings
+import sys, Settings, os
 from pypresence import *
 
 
@@ -28,5 +28,13 @@ def Main():
 	except DiscordNotFound:
 		print("\ncan't find discord on this pc, aborting...")
 		sys.exit()
-if __name__ == '__main__':
-	Main()
+try:
+	if __name__ == '__main__':
+		Main()
+except ImportError:
+	print("needed module not found, trying to install needed module")
+	os.system('pip install pypresence')
+	print("module installed, maybe...")
+	if __name__ == '__main__':
+		Main()
+
