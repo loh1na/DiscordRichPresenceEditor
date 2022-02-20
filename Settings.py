@@ -1,13 +1,13 @@
 # here paste a ClientID
-Clientid = '944848314728316948'
+Clientid = ''
 # here is a default settings for rich presence
 
 #use image from developer portal assets
-image_large = 'lol'
+image_large = ''
 # here is a texts for rich presence 
-large_text = "test"
-small_text = "test"
+large_text = ""
+small_text = ""
 #set usebutton to true, to enable button
-usebutton = True
-buttontext = "test"
-buttonurl = "https://google.com"
+usebutton = False
+buttontext = ""
+buttonurl = ""
