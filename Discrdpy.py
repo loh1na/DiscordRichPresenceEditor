@@ -10,10 +10,12 @@ def Main():
 			drp = Presence(Settings.Clientid)
 			print("starting and creating Rich Presence...")
 			drp.connect()
-			drp.update(state = Settings.large_text, details = Settings.small_text, large_image = Settings.image_large)
+			drp.update(state = Settings.large_text, large_image = Settings.image_large)
 			try:
 				if Settings.usebutton == True:
-					drp.update(buttons = [{"label":f"{Settings.buttontext}", "url":f"{Settings.buttonurl}"}])
+					drp.update(state = Settings.large_text, large_image = Settings.image_large, buttons = [{"label":f"{Settings.buttontext}", "url":f"{Settings.buttonurl}"}])
+				elif Settings.UseSmallText == True:
+					drp.update(state = Settings.large_text, large_image = Settings.image_large, details = Settings.small_text)
 			except ServerError:
 				print(f"can't found {Settings.buttonurl}, try do add to begin of url https://")
 		

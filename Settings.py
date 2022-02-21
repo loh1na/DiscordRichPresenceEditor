@@ -4,7 +4,8 @@ Clientid = ''
 
 #use image from developer portal assets
 image_large = ''
-# here is a texts for rich presence 
+# here is a texts for rich presence
+UseSmallText = False
 large_text = ""
 small_text = ""
 #set usebutton to true, to enable button
