@@ -12,4 +12,4 @@ click and add some image assets
 now go to Settings.py and setup Rich Precence.
 
 also change 
-image_large = ' *here paste a name of image asset (italic)* ' to name of image asset.
+image_large = ' *here paste a name of image asset* ' to name of image asset.
