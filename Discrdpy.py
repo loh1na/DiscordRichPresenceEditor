@@ -1,6 +1,12 @@
 # coded by loh1na
-import sys, Settings, os
-from pypresence import *
+try:
+	import sys, Settings, os
+	from pypresence import *
+except ImportError:
+	print("required module not found, trying to install...")
+	os.system('pip install pypresence')
+	print("module installed, maybe...")
+
 
 def Main():
 	print("Welcome to Discord Rich Presence editor\nplease paste a ClientID from your discord developer portal to Settings.py")
@@ -15,8 +21,6 @@ def Main():
 					drp.update(state = Settings.large_text, large_image = Settings.image_large, buttons = [{"label":f"{Settings.buttontext}", "url":f"{Settings.buttonurl}"}])
 				elif Settings.UseSmallText == True:
 					drp.update(state = Settings.large_text, large_image = Settings.image_large, details = Settings.small_text)
-				elif Settings.UseSmallText == True and Settings.usebutton == True:
-					drp.update(state = Settings.large_text, large_image = Settings.image_large, details = Settings.small_text, buttons = [{"label":f"{Settings.buttontext}", "url":f"{Settings.buttonurl}"}])
 			except ServerError:
 				print(f"can't found {Settings.buttonurl}, try do add to begin of url https://")
 		
@@ -34,4 +38,5 @@ def Main():
 
 if __name__ == '__main__':
 	Main()
+
 
